@@ -9,3 +9,4 @@ spec:
     - port: 5601
       name: http
       protocol: TCP
+  type: LoadBalancer

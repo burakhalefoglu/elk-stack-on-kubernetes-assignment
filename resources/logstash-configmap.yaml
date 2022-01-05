@@ -8,15 +8,14 @@ data:
     path.config: /usr/share/logstash/pipeline
   logstash.conf: |-
     input {
-      beats {
-        port => 5044
+      tcp {
+        port => 5000
       }
     }
     filter {
     }
     output {
       elasticsearch {
-        index => "logstash-%{[@metadata][beat]}"
         hosts => [ "${ES_HOSTS}" ]
         user => "${ES_USER}"
         password => "${ES_PASSWORD}"

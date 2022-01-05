@@ -6,5 +6,7 @@ spec:
   selector:
     app: logstash
   ports:
-    - port: 5044
-      name: '5044'
+    - port: 5000
+      name: 'tcp'
+      targetPort: 5000
+  type: LoadBalancer
